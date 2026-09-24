@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>بطاقتك | بطاقات التعبئة</title>
+
+  <meta
+    name="description"
+    content="متجر بطاقات التعبئة Orange و Inwi واتصالات المغرب. اطلب بطاقتك بسهولة عبر واتساب."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --orange: #ff7900;
+      --orange-light: #fff1e3;
+      --dark: #171717;
+      --gray: #6b7280;
+      --light: #f7f7f8;
+      --white: #ffffff;
+      --green: #16a34a;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #eee;
+    }
+
+    .navbar {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, #ff7900, #ffb347);
+      color: white;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      color: #555;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--orange);
+    }
+
+    .nav-button {
+      background: var(--orange);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-weight: bold;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 80px 0;
+      background:
+        radial-gradient(circle at 15% 20%, #ffe8d0, transparent 35%),
+        linear-gradient(135deg, #ffffff, #fff7ef);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--orange-light);
+      color: #c65c00;
+      padding: 7px 15px;
+      border-radius: 50px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 65px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      color: var(--orange);
+    }
+
+    .hero-text {
+      color: var(--gray);
+      font-size: 19px;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 14px 23px;
+      border-radius: 13px;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+      box-shadow: 0 10px 25px rgba(255,121,0,.25);
+    }
+
+    .btn-whatsapp {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-dark {
+      background: var(--dark);
+      color: white;
+    }
+
+    /* HERO CARD */
+
+    .phone-card {
+      background: white;
+      padding: 25px;
+      border-radius: 28px;
+      box-shadow: 0 15px 40px rgba(0,0,0,.1);
+    }
+
+    .card-design {
+      min-height: 250px;
+      padding: 25px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #ff7900, #ffb347);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-design h2 {
+      font-size: 28px;
+    }
+
+    .card-design strong {
+      display: block;
+      font-size: 50px;
+      margin-top: 40px;
+    }
+
+    .network-list {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+      color: #777;
+      font-weight: bold;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 35px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: var(--gray);
+    }
+
+    /* PRODUCTS */
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.07);
+      transition: .25s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .brand {
+      width: 58px;
+      height: 58px;
+      border-radius: 17px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    .orange {
+      background: #ff7900;
+    }
+
+    .inwi {
+      background: #7528d7;
+    }
+
+    .maroc-telecom {
+      background: #df1f2d;
+    }
+
+    .product h3 {
+      font-size: 23px;
+      margin-bottom: 5px;
+    }
+
+    .product p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .prices {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      background: #f1f2f4;
+      padding: 7px 12px;
+      border-radius: 9px;
+      font-weight: bold;
+    }
+
+    .order-button {
+      width: 100%;
+      display: block;
+      text-align: center;
+      padding: 12px;
+      background: var(--dark);
+      color: white;
+      border-radius: 11px;
+      font-weight: bold;
+    }
+
+    .order-button:hover {
+      background: var(--orange);
+    }
+
+    /* HOW */
+
+    .how {
+      background: white;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 28px;
+      border-radius: 18px;
+      background: var(--light);
+    }
+
+    .number {
+      width: 45px;
+      height: 45px;
+      margin: auto auto 15px;
+      border-radius: 50%;
+      background: var(--orange-light);
+      color: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .step p {
+      color: var(--gray);
+      margin-top: 5px;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      background: var(--dark);
+      color: white;
+      padding: 45px;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .contact-box p {
+      color: #c8c8c8;
+      margin-top: 5px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        padding: 50px 0;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+      }
+
+      .phone-card {
+        transform: none;
+      }
+
+      h1 {
+        font-size: 43px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="container navbar">
+
+      <a href="#" class="logo">
+        <span class="logo-icon">⚡</span>
+        بطاقتك
+      </a>
+
+      <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#products">البطاقات</a>
+        <a href="#how">كيفاش تطلب؟</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+
+      <a href="tel:0660726684" class="nav-button">
+        اتصل بنا
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <main id="home">
+
+    <section class="hero">
+
+      <div class="container hero-content">
+
+        <div>
+
+          <span class="badge">
+            🇲🇦 خدمة داخل المغرب
+          </span>
+
+          <h1>
+            بطاقات التعبئة
+            <br>
+            <span>بسهولة وسرعة</span>
+          </h1>
+
+          <p class="hero-text">
+            اختار الشبكة والقيمة اللي بغيتي،
+            وتواصل معنا مباشرة باش نأكدوا الطلب ديالك.
+            Orange و Inwi واتصالات المغرب.
+          </p>
+
+          <div class="buttons">
+
+            <a href="#products" class="btn btn-primary">
+              شوف البطاقات ↓
+            </a>
+
+            <a
+              href="https://wa.me/212660726684?text=سلام،%20بغيت%20نطلب%20بطاقة%20تعبئة"
+              class="btn btn-whatsapp"
+              target="_blank"
+            >
+              💬 واتساب
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="phone-card">
+
+          <div class="card-design">
+
+            <h2>بطاقتك 🇲🇦</h2>
+
+            <strong>Recharge</strong>
+
+            <p>
+              سريعة • سهلة • موثوقة
+            </p>
+
+          </div>
+
+          <div class="network-list">
+            <span>Orange</span>
+            <span>Inwi</span>
+            <span>IAM</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+
+    <section id="products">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2>
+            اختار الشبكة ديالك
+          </h2>
+
+          <p>
+            الأثمنة يمكن تعديلها من بعد حسب المنتوج.
+          </p>
+
+        </div>
+
+
+        <div class="products">
+
+
+          <!-- ORANGE -->
+
+          <article class="product">
+
+            <div class="brand orange">
+              O
+            </div>
+
+            <h3>
+              Orange
+            </h3>
+
+            <p>
+              بطاقات تعبئة Orange
+            </p>
+
+            <div class="prices">
+
+              <span class="price">10 DH</span>
+              <span class="price">20 DH</span>
+              <span class="price">50 DH</span>
+              <span class="price">100 DH</span>
+
+            </div>
+
+            <a
+              class="order-button"
+              href="https://wa.me/212660726684?text=سلام،%20بغيت%20بطاقة%20Orange"
+              target="_blank"
+            >
+              اطلب Orange
+            </a>
+
+          </article>
+
+
+          <!-- INWI -->
+
+          <article class="product">
+
+            <div class="brand inwi">
+              inwi
+            </div>
+
+            <h3>
+              Inwi
+            </h3>
+
+            <p>
+              بطاقات تعبئة Inwi
+            </p>
+
+            <div class="prices">
+
+              <span class="price">10 DH</span>
+              <span class="price">20 DH</span>
+              <span class="price">50 DH</span>
+              <span class="price">100 DH</span>
+
+            </div>
+
+            <a
+              class="order-button"
+              href="https://wa.me/212660726684?text=سلام،%20بغيت%20بطاقة%20Inwi"
+              target="_blank"
+            >
+              اطلب Inwi
+            </a>
+
+          </article>
+
+
+          <!-- MAROC TELECOM -->
+
+          <article class="product">
+
+            <div class="brand maroc-telecom">
+              IAM
+            </div>
+
+            <h3>
+              اتصالات المغرب
+            </h3>
+
+            <p>
+              بطاقات تعبئة اتصالات المغرب
+            </p>
+
+            <div class="prices">
+
+              <span class="price">10 DH</span>
+              <span class="price">20 DH</span>
+              <span class="price">50 DH</span>
+              <span class="price">100 DH</span>
+
+            </div>
+
+            <a
+              class="order-button"
+              href="https://wa.me/212660726684?text=سلام،%20بغيت%20بطاقة%20اتصالات%20المغرب"
+              target="_blank"
+            >
+              اطلب IAM
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOW TO ORDER -->
+
+    <section id="how" class="how">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2>
+            كيفاش تطلب؟
+          </h2>
+
+          <p>
+            العملية بسيطة
+          </p>
+
+        </div>
+
+
+        <div class="steps">
+
+          <div class="step">
+
+            <div class="number">
+              1
+            </div>
+
+            <h3>
+              اختار البطاقة
+            </h3>
+
+            <p>
+              اختار الشبكة والقيمة المناسبة ليك.
+            </p>
+
+          </div>
+
+
+          <div class="step">
+
+            <div class="number">
+              2
+            </div>
+
+            <h3>
+              صيفط الطلب
+            </h3>
+
+            <p>
+              كليكي على زر الطلب وتواصل معنا عبر واتساب.
+            </p>
+
+          </div>
+
+
+          <div class="step">
+
+            <div class="number">
+              3
+            </div>
+
+            <h3>
+              أكد الطلب
+            </h3>
+
+            <p>
+              كنأكدوا معاك التفاصيل قبل إتمام العملية.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div>
+
+            <h2>
+              باغي تطلب دابا؟
+            </h2>
+
+            <p>
+              تواصل معنا مباشرة عبر الهاتف أو واتساب.
+            </p>
+
+          </div>
+
+
+          <div class="contact-buttons">
+
+            <a
+              href="tel:0660726684"
+              class="btn btn-primary"
+            >
+              📞 0660726684
+            </a>
+
+
+            <a
+              href="https://wa.me/212660726684?text=سلام،%20بغيت%20نطلب%20بطاقة%20تعبئة"
+              class="btn btn-whatsapp"
+              target="_blank"
+            >
+              💬 واتساب
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      © 2026 بطاقتك — جميع الحقوق محفوظة
+
+      <br>
+
+      <a href="mailto:boubkerlahmamssa@icloud.com">
+        boubkerlahmamssa@icloud.com
+      </a>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
+
