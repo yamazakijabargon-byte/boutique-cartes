@@ -1,23 +1,17 @@
-<!DOCTYPE html>
+
+   <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>بطاقتك | بطاقات التعبئة</title>
-
-  <meta
-    name="description"
-    content="متجر بطاقات التعبئة Orange و Inwi واتصالات المغرب. اطلب بطاقتك بسهولة عبر واتساب."
-  >
-
+  <title>متجر شرائح SIM | العروض والبطاقات</title>
+  <meta name="description" content="متجر شرائح SIM وكرط سيم Orange، Inwi واتصالات المغرب. اطلب شريحتك بسهولة عبر واتساب وتعرف على العروض الخاصة.">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     :root {
       --orange: #ff7900;
       --orange-light: #fff1e3;
@@ -26,27 +20,24 @@
       --light: #f7f7f8;
       --white: #ffffff;
       --green: #16a34a;
+      --inwi-color: #7528d7;
+      --iam-color: #df1f2d;
     }
-
     body {
       font-family: Arial, Tahoma, sans-serif;
       background: var(--light);
       color: var(--dark);
       line-height: 1.7;
     }
-
     a {
       text-decoration: none;
       color: inherit;
     }
-
     .container {
       width: min(1150px, 92%);
       margin: auto;
     }
-
     /* NAVBAR */
-
     header {
       position: sticky;
       top: 0;
@@ -55,7 +46,6 @@
       backdrop-filter: blur(10px);
       border-bottom: 1px solid #eee;
     }
-
     .navbar {
       min-height: 72px;
       display: flex;
@@ -63,7 +53,6 @@
       justify-content: space-between;
       gap: 20px;
     }
-
     .logo {
       display: flex;
       align-items: center;
@@ -71,7 +60,6 @@
       font-size: 22px;
       font-weight: 900;
     }
-
     .logo-icon {
       width: 42px;
       height: 42px;
@@ -82,17 +70,29 @@
       align-items: center;
       justify-content: center;
     }
-
     nav {
       display: flex;
-      gap: 25px;
+      gap: 20px;
       color: #555;
       font-weight: bold;
     }
-
     nav a:hover {
       color: var(--orange);
     }
+    .social-links {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .social-badge {
+      background: #eee;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .social-badge.fb { background: #1877f2; color: white; }
+    .social-badge.ig { background: #e4405f; color: white; }
 
     .nav-button {
       background: var(--orange);
@@ -103,21 +103,16 @@
     }
 
     /* HERO */
-
     .hero {
-      padding: 80px 0;
-      background:
-        radial-gradient(circle at 15% 20%, #ffe8d0, transparent 35%),
-        linear-gradient(135deg, #ffffff, #fff7ef);
+      padding: 70px 0;
+      background: radial-gradient(circle at 15% 20%, #ffe8d0, transparent 35%), linear-gradient(135deg, #ffffff, #fff7ef);
     }
-
     .hero-content {
       display: grid;
       grid-template-columns: 1.1fr .9fr;
       align-items: center;
-      gap: 60px;
+      gap: 50px;
     }
-
     .badge {
       display: inline-block;
       background: var(--orange-light);
@@ -127,30 +122,24 @@
       font-weight: bold;
       margin-bottom: 18px;
     }
-
     h1 {
-      font-size: clamp(40px, 6vw, 65px);
-      line-height: 1.1;
+      font-size: clamp(32px, 4.5vw, 50px);
+      line-height: 1.25;
       margin-bottom: 20px;
     }
-
     h1 span {
       color: var(--orange);
     }
-
     .hero-text {
       color: var(--gray);
-      font-size: 19px;
-      max-width: 650px;
-      margin-bottom: 28px;
+      font-size: 18px;
+      margin-bottom: 25px;
     }
-
     .buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
     }
-
     .btn {
       padding: 14px 23px;
       border-radius: 13px;
@@ -162,24 +151,8 @@
       cursor: pointer;
       border: none;
     }
-
-    .btn-primary {
-      background: var(--orange);
-      color: white;
-      box-shadow: 0 10px 25px rgba(255,121,0,.25);
-    }
-
-    .btn-whatsapp {
-      background: var(--green);
-      color: white;
-    }
-
-    .btn-dark {
-      background: var(--dark);
-      color: white;
-    }
-
-    /* HERO CARD */
+    .btn-primary { background: var(--orange); color: white; box-shadow: 0 10px 25px rgba(255,121,0,.25); }
+    .btn-whatsapp { background: var(--green); color: white; }
 
     .phone-card {
       background: white;
@@ -187,75 +160,71 @@
       border-radius: 28px;
       box-shadow: 0 15px 40px rgba(0,0,0,.1);
     }
-
     .card-design {
-      min-height: 250px;
+      min-height: 230px;
       padding: 25px;
       border-radius: 20px;
-      background: linear-gradient(135deg, #ff7900, #ffb347);
+      background: linear-gradient(135deg, #ff7900, #7528d7);
       color: white;
       position: relative;
-      overflow: hidden;
     }
+    .card-design h2 { font-size: 26px; }
+    .card-design strong { display: block; font-size: 35px; margin-top: 20px; }
 
-    .card-design h2 {
-      font-size: 28px;
-    }
+    /* SECTION OFFERS & DISCOUNTS */
+    section { padding: 65px 0; }
+    .section-title { text-align: center; margin-bottom: 40px; }
+    .section-title h2 { font-size: 32px; margin-bottom: 8px; }
+    .section-title p { color: var(--gray); }
 
-    .card-design strong {
-      display: block;
-      font-size: 50px;
-      margin-top: 40px;
-    }
-
-    .network-list {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 20px;
-      color: #777;
-      font-weight: bold;
-    }
-
-    /* SECTIONS */
-
-    section {
-      padding: 75px 0;
-    }
-
-    .section-title {
-      text-align: center;
+    .promo-banner {
+      background: linear-gradient(135deg, #171717, #333);
+      color: white;
+      padding: 30px;
+      border-radius: 20px;
       margin-bottom: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
-
-    .section-title h2 {
-      font-size: 35px;
-      margin-bottom: 8px;
-    }
-
-    .section-title p {
-      color: var(--gray);
+    .promo-tag {
+      background: #df1f2d;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 10px;
     }
 
     /* PRODUCTS */
-
     .products {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
-
     .product {
       background: white;
       padding: 25px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,.07);
-      transition: .25s;
+      position: relative;
+      overflow: hidden;
     }
-
-    .product:hover {
-      transform: translateY(-5px);
+    .discount-badge {
+      position: absolute;
+      top: 15px;
+      left: -30px;
+      background: #df1f2d;
+      color: white;
+      padding: 5px 35px;
+      font-size: 12px;
+      font-weight: bold;
+      transform: rotate(-45deg);
     }
-
     .brand {
       width: 58px;
       height: 58px;
@@ -268,42 +237,31 @@
       font-size: 18px;
       margin-bottom: 18px;
     }
+    .orange { background: var(--orange); }
+    .inwi { background: var(--inwi-color); }
+    .maroc-telecom { background: var(--iam-color); }
 
-    .orange {
-      background: #ff7900;
+    .product h3 { font-size: 22px; margin-bottom: 5px; }
+    .product p { color: var(--gray); margin-bottom: 15px; font-size: 15px; }
+    
+    .sim-features {
+      background: #f9fafb;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      font-size: 14px;
     }
+    .sim-features ul { list-style: none; }
+    .sim-features li { margin-bottom: 4px; color: #444; }
 
-    .inwi {
-      background: #7528d7;
-    }
-
-    .maroc-telecom {
-      background: #df1f2d;
-    }
-
-    .product h3 {
-      font-size: 23px;
-      margin-bottom: 5px;
-    }
-
-    .product p {
-      color: var(--gray);
-      margin-bottom: 20px;
-    }
-
-    .prices {
+    .price-box {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      align-items: center;
+      gap: 10px;
       margin-bottom: 20px;
     }
-
-    .price {
-      background: #f1f2f4;
-      padding: 7px 12px;
-      border-radius: 9px;
-      font-weight: bold;
-    }
+    .old-price { text-decoration: line-through; color: var(--gray); font-size: 15px; }
+    .new-price { font-size: 22px; font-weight: bold; color: var(--green); }
 
     .order-button {
       width: 100%;
@@ -315,505 +273,359 @@
       border-radius: 11px;
       font-weight: bold;
     }
+    .order-button:hover { background: var(--orange); }
 
-    .order-button:hover {
-      background: var(--orange);
+    /* ADMIN / PUBLISH SECTION (محمي بكلمة سر) */
+    .admin-section {
+      background: #fff;
+      padding: 40px 0;
+      border-top: 1px dashed #ddd;
     }
-
-    /* HOW */
-
-    .how {
+    .login-box, .admin-panel {
       background: white;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .step {
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      max-width: 600px;
+      margin: auto;
+      border: 2px dashed var(--orange);
       text-align: center;
-      padding: 28px;
-      border-radius: 18px;
-      background: var(--light);
     }
-
-    .number {
-      width: 45px;
-      height: 45px;
-      margin: auto auto 15px;
-      border-radius: 50%;
-      background: var(--orange-light);
-      color: var(--orange);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 18px;
+    .admin-panel { text-align: right; }
+    .hidden { display: none; }
+    
+    .form-group { margin-bottom: 15px; text-align: right; }
+    .form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: inherit;
     }
-
-    .step p {
-      color: var(--gray);
-      margin-top: 5px;
-    }
-
-    /* CONTACT */
-
-    .contact-box {
-      background: var(--dark);
+    .admin-btn {
+      background: var(--green);
       color: white;
-      padding: 45px;
-      border-radius: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .logout-btn {
+      background: #df1f2d;
+      color: white;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      float: left;
     }
 
-    .contact-box p {
-      color: #c8c8c8;
-      margin-top: 5px;
+    #dynamic-posts-container {
+      display: grid;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .dynamic-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      border-right: 5px solid var(--orange);
+      box-shadow: 0 5px 15px rgba(0,0,0,.05);
+      position: relative;
+    }
+    .delete-post-btn {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #fee2e2;
+      color: #dc2626;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: bold;
     }
 
-    .contact-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      text-align: center;
-      padding: 30px 0;
-      color: var(--gray);
-      font-size: 14px;
-    }
-
-    /* MOBILE */
+    footer { text-align: center; padding: 30px 0; color: var(--gray); font-size: 14px; background: #fff; border-top: 1px solid #eee; }
 
     @media (max-width: 800px) {
-
-      nav {
-        display: none;
-      }
-
-      .hero {
-        padding: 50px 0;
-      }
-
-      .hero-content {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .products {
-        grid-template-columns: 1fr;
-      }
-
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-box {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 30px;
-      }
-
-      .phone-card {
-        transform: none;
-      }
-
-      h1 {
-        font-size: 43px;
-      }
+      nav, .social-links { display: none; }
+      .hero-content { grid-template-columns: 1fr; }
+      .products { grid-template-columns: 1fr; }
+      .promo-banner { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
-
 <body>
 
   <!-- HEADER -->
-
   <header>
     <div class="container navbar">
-
       <a href="#" class="logo">
-        <span class="logo-icon">⚡</span>
-        بطاقتك
+        <span class="logo-icon">📶</span>
+        كارط سيم المغرب
       </a>
-
       <nav>
         <a href="#home">الرئيسية</a>
-        <a href="#products">البطاقات</a>
-        <a href="#how">كيفاش تطلب؟</a>
-        <a href="#contact">تواصل معنا</a>
+        <a href="#sim-products">شرائح SIM</a>
+        <a href="#offers">العروض الخاصة</a>
       </nav>
-
-      <a href="tel:0660726684" class="nav-button">
-        اتصل بنا
-      </a>
-
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank" class="social-badge fb">فيسبوك: بوبكر لحمامسة</a>
+        <a href="https://instagram.com/Lahm_mssa" target="_blank" class="social-badge ig">انستغرام: Lahm_mssa</a>
+      </div>
+      <a href="https://wa.me/212660726684?text=سلام،%20بغيت%20نستفسر%20على%20كارط%20سيم" class="nav-button" target="_blank">واتساب مباشر</a>
     </div>
   </header>
 
-
   <!-- HERO -->
-
   <main id="home">
-
     <section class="hero">
-
       <div class="container hero-content">
-
         <div>
-
-          <span class="badge">
-            🇲🇦 خدمة داخل المغرب
-          </span>
-
+          <span class="badge">🇲🇦 توصيل سريع لجميع مناطق المغرب</span>
           <h1>
-            بطاقات التعبئة
-            <br>
-            <span>بسهولة وسرعة</span>
+            شرائح <span>Orange، Inwi و اتصالات المغرب</span> بأثمنة خيالية والتفعيل الفوري!
           </h1>
-
           <p class="hero-text">
-            اختار الشبكة والقيمة اللي بغيتي،
-            وتواصل معنا مباشرة باش نأكدوا الطلب ديالك.
-            Orange و Inwi واتصالات المغرب.
+            اختار الشريحة أو العرض اللي بغيتي (نجمة 6، نجمة 3، عروض المكالمات)، وتواصل معنا مباشرة عبر واتساب لتأكيد طلبك وتوصيلك بسرعة.
           </p>
-
           <div class="buttons">
-
-            <a href="#products" class="btn btn-primary">
-              شوف البطاقات ↓
-            </a>
-
-            <a
-              href="https://wa.me/212660726684?text=سلام،%20بغيت%20نطلب%20بطاقة%20تعبئة"
-              class="btn btn-whatsapp"
-              target="_blank"
-            >
-              💬 واتساب
-            </a>
-
+            <a href="#sim-products" class="btn btn-primary">شوف الشرائح والعروض ↓</a>
+            <a href="https://wa.me/212660726684?text=سلام،%20بغيت%20نطلب%20كارط%20سيم" class="btn btn-whatsapp" target="_blank">💬 اطلب عبر واتساب</a>
           </div>
-
         </div>
-
-
         <div class="phone-card">
-
           <div class="card-design">
-
-            <h2>بطاقتك 🇲🇦</h2>
-
-            <strong>Recharge</strong>
-
-            <p>
-              سريعة • سهلة • موثوقة
-            </p>
-
+            <h2>متجر شرائح SIM 🇲🇦</h2>
+            <strong>عروض مميزة</strong>
+            <p>سرعة في التفعيل • أثمنة جد مناسبة</p>
           </div>
-
-          <div class="network-list">
-            <span>Orange</span>
-            <span>Inwi</span>
-            <span>IAM</span>
-          </div>
-
         </div>
-
       </div>
-
     </section>
 
+    <!-- OFFERS & DISCOUNTS SECTION -->
+    <section id="offers" class="container">
+      <div class="section-title">
+        <h2>🔥 العروض الخاصة والتخفيضات</h2>
+        <p>استفد من أقوى التخفيضات والعروض الحصرية على شرائح الاتصال</p>
+      </div>
 
-    <!-- PRODUCTS -->
-
-    <section id="products">
-
-      <div class="container">
-
-        <div class="section-title">
-
-          <h2>
-            اختار الشبكة ديالك
-          </h2>
-
-          <p>
-            الأثمنة يمكن تعديلها من بعد حسب المنتوج.
-          </p>
-
+      <div class="promo-banner">
+        <div>
+          <span class="promo-tag">عرض محدود</span>
+          <h2>تخفيض 20% على جميع شرائح SIM الجديدة مع تعبئة أولية!</h2>
+          <p>اطلب شريحتك الآن واستفد من رصيد هدية وعروض النجوم المفضلة لديك.</p>
         </div>
+        <a href="https://wa.me/212660726684?text=سلام،%20بغيت%20نستفد%20من%20عرض%20التخفيض%20ديال%20كارط%20سيم" class="btn btn-whatsapp" target="_blank">استفد من العرض</a>
+      </div>
 
+      <!-- مكان ظهور المنشورات الخاصة بك -->
+      <div id="dynamic-posts-container"></div>
+    </section>
+
+    <!-- PRODUCTS (SIM CARDS) -->
+    <section id="sim-products" style="background: #fff;">
+      <div class="container">
+        <div class="section-title">
+          <h2>اختار الشبكة والعرض المناسب ليك</h2>
+          <p>متوفرة شرائح لجميع الشركات الكبرى بالمغرب</p>
+        </div>
 
         <div class="products">
-
-
-          <!-- ORANGE -->
-
+          <!-- ORANGE SIM -->
           <article class="product">
-
-            <div class="brand orange">
-              O
+            <div class="discount-badge">تخفيض</div>
+            <div class="brand orange">O</div>
+            <h3>Orange SIM</h3>
+            <p>شريحة أورنج مفعلة وجاهزة للاستخدام</p>
+            <div class="sim-features">
+              <ul>
+                <li>✓ تدعم عروض نجمة 6 ونجمة 3</li>
+                <li>✓ سرعة إنترنت 4G عالية</li>
+              </ul>
             </div>
-
-            <h3>
-              Orange
-            </h3>
-
-            <p>
-              بطاقات تعبئة Orange
-            </p>
-
-            <div class="prices">
-
-              <span class="price">10 DH</span>
-              <span class="price">20 DH</span>
-              <span class="price">50 DH</span>
-              <span class="price">100 DH</span>
-
+            <div class="price-box">
+              <span class="old-price">30 DH</span>
+              <span class="new-price">20 DH فقط</span>
             </div>
-
-            <a
-              class="order-button"
-              href="https://wa.me/212660726684?text=سلام،%20بغيت%20بطاقة%20Orange"
-              target="_blank"
-            >
-              اطلب Orange
-            </a>
-
+            <a class="order-button" href="https://wa.me/212660726684?text=سلام،%20بغيت%20نطلب%20كارط%20سيم%20Orange" target="_blank">اطلب Orange عبر واتساب</a>
           </article>
 
-
-          <!-- INWI -->
-
+          <!-- INWI SIM -->
           <article class="product">
-
-            <div class="brand inwi">
-              inwi
+            <div class="discount-badge">عرض خاص</div>
+            <div class="brand inwi">inwi</div>
+            <h3>Inwi SIM</h3>
+            <p>شريحة إنوي بأفضل العروض والإنترنت</p>
+            <div class="sim-features">
+              <ul>
+                <li>✓ تفعيل فوري وبدون تعقيدات</li>
+                <li>✓ متوافقة مع عروض التعبئة والشبكات الاجتماعية</li>
+              </ul>
             </div>
-
-            <h3>
-              Inwi
-            </h3>
-
-            <p>
-              بطاقات تعبئة Inwi
-            </p>
-
-            <div class="prices">
-
-              <span class="price">10 DH</span>
-              <span class="price">20 DH</span>
-              <span class="price">50 DH</span>
-              <span class="price">100 DH</span>
-
+            <div class="price-box">
+              <span class="old-price">30 DH</span>
+              <span class="new-price">20 DH فقط</span>
             </div>
-
-            <a
-              class="order-button"
-              href="https://wa.me/212660726684?text=سلام،%20بغيت%20بطاقة%20Inwi"
-              target="_blank"
-            >
-              اطلب Inwi
-            </a>
-
+            <a class="order-button" href="https://wa.me/212660726684?text=سلام،%20بغيت%20نطلب%20كارط%20سيم%20Inwi" target="_blank">اطلب Inwi عبر واتساب</a>
           </article>
 
-
-          <!-- MAROC TELECOM -->
-
+          <!-- MAROC TELECOM SIM -->
           <article class="product">
-
-            <div class="brand maroc-telecom">
-              IAM
+            <div class="discount-badge">الأكثر طلباً</div>
+            <div class="brand maroc-telecom">IAM</div>
+            <h3>اتصالات المغرب SIM</h3>
+            <p>شريحة IAM بتغطية واسعة في كل المغرب</p>
+            <div class="sim-features">
+              <ul>
+                <li>✓ تغطية شاملة لجميع المدن والقرى</li>
+                <li>✓ خيارات متعددة للعروض</li>
+              </ul>
             </div>
-
-            <h3>
-              اتصالات المغرب
-            </h3>
-
-            <p>
-              بطاقات تعبئة اتصالات المغرب
-            </p>
-
-            <div class="prices">
-
-              <span class="price">10 DH</span>
-              <span class="price">20 DH</span>
-              <span class="price">50 DH</span>
-              <span class="price">100 DH</span>
-
+            <div class="price-box">
+              <span class="old-price">30 DH</span>
+              <span class="new-price">20 DH فقط</span>
             </div>
-
-            <a
-              class="order-button"
-              href="https://wa.me/212660726684?text=سلام،%20بغيت%20بطاقة%20اتصالات%20المغرب"
-              target="_blank"
-            >
-              اطلب IAM
-            </a>
-
+            <a class="order-button" href="https://wa.me/212660726684?text=سلام،%20بغيت%20نطلب%20كارط%20سيم%20اتصالات%20المغرب" target="_blank">اطلب IAM عبر واتساب</a>
           </article>
-
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- HOW TO ORDER -->
-
-    <section id="how" class="how">
-
+    <!-- SECURE ADMIN SECTION (محمي بكلمة مرور) -->
+    <section class="admin-section">
       <div class="container">
-
-        <div class="section-title">
-
-          <h2>
-            كيفاش تطلب؟
-          </h2>
-
-          <p>
-            العملية بسيطة
-          </p>
-
+        
+        <!-- واجهة تسجيل الدخول (تظهر للجميع في البداية) -->
+        <div id="loginBox" class="login-box">
+          <h3 style="margin-bottom: 10px; color: var(--dark);">🔐 لوحة تحكم المالك</h3>
+          <p style="color: var(--gray); font-size: 14px; margin-bottom: 15px;">هذه المنطقة مخصصة لبوبكر فقط لإدارة ونشر العروض.</p>
+          <input type="password" id="adminPasswordInput" placeholder="أدخل كلمة السر الخاصة بك" style="padding: 10px; width: 80%; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 10px; text-align: center;">
+          <br>
+          <button class="admin-btn" onclick="checkAdminPassword()">تسجيل الدخول</button>
         </div>
 
-
-        <div class="steps">
-
-          <div class="step">
-
-            <div class="number">
-              1
-            </div>
-
-            <h3>
-              اختار البطاقة
-            </h3>
-
-            <p>
-              اختار الشبكة والقيمة المناسبة ليك.
-            </p>
-
+        <!-- لوحة التحكم (مخفية ولا تظهر إلا بكلمة السر الصحيحة) -->
+        <div id="adminPanelBox" class="admin-panel hidden">
+          <button class="logout-btn" onclick="logoutAdmin()">تسجيل الخروج 🔒</button>
+          <h3 style="margin-bottom: 15px; color: var(--orange);">📝 لوحة التحكم (نشر العروض والجديد)</h3>
+          <div class="form-group">
+            <label>عنوان العرض أو الخبر:</label>
+            <input type="text" id="postTitle" placeholder="مثال: عرض جديد...">
           </div>
-
-
-          <div class="step">
-
-            <div class="number">
-              2
-            </div>
-
-            <h3>
-              صيفط الطلب
-            </h3>
-
-            <p>
-              كليكي على زر الطلب وتواصل معنا عبر واتساب.
-            </p>
-
+          <div class="form-group">
+            <label>تفاصيل العرض:</label>
+            <textarea id="postContent" rows="3" placeholder="اكتب تفاصيل العرض هنا..."></textarea>
           </div>
-
-
-          <div class="step">
-
-            <div class="number">
-              3
-            </div>
-
-            <h3>
-              أكد الطلب
-            </h3>
-
-            <p>
-              كنأكدوا معاك التفاصيل قبل إتمام العملية.
-            </p>
-
-          </div>
-
+          <button class="admin-btn" onclick="publishNewOffer()">نشر في الموقع 🚀</button>
         </div>
 
       </div>
-
     </section>
-
-
-    <!-- CONTACT -->
-
-    <section id="contact">
-
-      <div class="container">
-
-        <div class="contact-box">
-
-          <div>
-
-            <h2>
-              باغي تطلب دابا؟
-            </h2>
-
-            <p>
-              تواصل معنا مباشرة عبر الهاتف أو واتساب.
-            </p>
-
-          </div>
-
-
-          <div class="contact-buttons">
-
-            <a
-              href="tel:0660726684"
-              class="btn btn-primary"
-            >
-              📞 0660726684
-            </a>
-
-
-            <a
-              href="https://wa.me/212660726684?text=سلام،%20بغيت%20نطلب%20بطاقة%20تعبئة"
-              class="btn btn-whatsapp"
-              target="_blank"
-            >
-              💬 واتساب
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
   </main>
 
-
   <!-- FOOTER -->
-
   <footer>
-
     <div class="container">
-
-      © 2026 بطاقتك — جميع الحقوق محفوظة
-
-      <br>
-
-      <a href="mailto:boubkerlahmamssa@icloud.com">
-        boubkerlahmamssa@icloud.com
-      </a>
-
+      <p>©️ 2026 متجر شرائح SIM — جميع الحقوق محفوظة لـ **بوبكر لحمامسة**</p>
+      <p style="margin-top: 5px;">
+        تابعنا على إنستغرام: <a href="https://instagram.com/Lahm_mssa" target="_blank" style="color: var(--orange); font-weight: bold;">@Lahm_mssa</a>
+      </p>
     </div>
-
   </footer>
 
+  <script>
+    // كلمة السر الخاصة بك
+    const CORRECT_PASSWORD = "Boubker12";
+
+    function checkAdminPassword() {
+      const inputVal = document.getElementById('adminPasswordInput').value;
+      if(inputVal === CORRECT_PASSWORD) {
+        document.getElementById('loginBox').classList.add('hidden');
+        document.getElementById('adminPanelBox').classList.remove('hidden');
+        localStorage.setItem('isAdminLoggedIn', 'true');
+        loadPosts();
+      } else {
+        alert('كلمة السر غير صحيحة!');
+      }
+    }
+
+    function logoutAdmin() {
+      localStorage.removeItem('isAdminLoggedIn');
+      document.getElementById('adminPanelBox').classList.add('hidden');
+      document.getElementById('loginBox').classList.remove('hidden');
+      document.getElementById('adminPasswordInput').value = '';
+      loadPosts();
+    }
+
+    window.onload = function() {
+      if(localStorage.getItem('isAdminLoggedIn') === 'true') {
+        document.getElementById('loginBox').classList.add('hidden');
+        document.getElementById('adminPanelBox').classList.remove('hidden');
+      }
+      loadPosts();
+    }
+
+    function publishNewOffer() {
+      const title = document.getElementById('postTitle').value;
+      const content = document.getElementById('postContent').value;
+
+      if(!title || !content) {
+        alert('المرجو ملء العنوان والتفاصيل أولاً!');
+        return;
+      }
+
+      const postObj = { id: Date.now(), title, content, date: new Date().toLocaleDateString('ar-MA') };
+      
+      let savedPosts = JSON.parse(localStorage.getItem('myStorePosts') || '[]');
+      savedPosts.unshift(postObj);
+      localStorage.setItem('myStorePosts', JSON.stringify(savedPosts));
+
+      document.getElementById('postTitle').value = '';
+      document.getElementById('postContent').value = '';
+      
+      loadPosts();
+      alert('تم نشر العرض بنجاح في الموقع!');
+    }
+
+    function deletePost(id) {
+      if(confirm('هل أنت متأكد من حذف هذا العرض؟')) {
+        let savedPosts = JSON.parse(localStorage.getItem('myStorePosts') || '[]');
+        savedPosts = savedPosts.filter(post => post.id !== id);
+        localStorage.setItem('myStorePosts', JSON.stringify(savedPosts));
+        loadPosts();
+      }
+    }
+
+    function loadPosts() {
+      const container = document.getElementById('dynamic-posts-container');
+      let savedPosts = JSON.parse(localStorage.getItem('myStorePosts') || '[]');
+      const isLoggedIn = localStorage.getItem('isAdminLoggedIn') === 'true';
+      
+      let html = '';
+      savedPosts.forEach(post => {
+        let deleteBtnHtml = isLoggedIn ? `<button class="delete-post-btn" onclick="deletePost(${post.id})">حذف</button>` : '';
+        html += `
+          <div class="dynamic-card">
+            ${deleteBtnHtml}
+            <h4>📢 ${post.title}</h4>
+            <p>${post.content}</p>
+            <small style="color: #888;">تاريخ النشر: ${post.date}</small>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+    }
+  </script>
+
+</body>
+</html>
 
 </body>
 </html>
